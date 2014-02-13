@@ -4,7 +4,6 @@
 
 int main(void)
 {
-    (gdb)
-    printf("Hello World");
+    printf("Hello World"); // prints Hello World
     return 0;
 }
