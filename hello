@@ -7,6 +7,6 @@
 # the hello world statement
 
 hello: HelloWorld.c
-        gcc helloworld.c -o hello
+        gcc -g -Wall helloworld.c -o hello
         ./hello
 
