@@ -6,7 +6,7 @@
 # following the compilation "./hello" then executes hello and produces
 # the hello world statement
 
-hello: helloworld.c
+hello: HelloWorld.c
         gcc helloworld.c -o hello
         ./hello
 
