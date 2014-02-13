@@ -2,7 +2,9 @@
 
 #include<stdio.h>
 
-main()
+int main(void)
 {
+    (gdb)
     printf("Hello World");
+    return 0;
 }
