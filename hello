@@ -1,15 +1,12 @@
-# For this particual instance makefile I only have one target,
+# For this particual instance of makefile we only have one target,
 # "helloworld.c"
-# for this instance of compilation I'm using gcc, and there is a rule
+# for this instance of compilation we are using gcc, and there is a rule
 # to make it known that a compile target is to be executed there must be
-# a tab.
-# finally there is also a "touch command" in the event that a force
-# re-creation of an executable is necessary, and new time stamp is
-# placed.
-
-exec: hello
-        ./hello
+# a tab. (spaces will not work)
+# following the compilation "./hello" then executes hello and produces
+# the hello world statement
 
 hello: helloworld.c
         gcc helloworld.c -o hello
-        touch hello
+        ./hello
+
