@@ -10,11 +10,11 @@ void print_line(char line[], char source_name_to_print[], char date_to_print[])
     
     if (++line_count > MAX_LINES_PER_PAGE)
     {
-        /* Missing Code Here */
+        print_page_header;
     }
     if (strlen(line) > MAX_PRINT_LINE_LENGTH) 
     {
-        /* Missing Code Here */
+        printf ...| fold -w 80 // wrap to fit 80
     }
     if (save_chp)
     {
