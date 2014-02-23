@@ -11,21 +11,30 @@ void print_line(char line[], char source_name_to_print[], char date_to_print[])
     
     if (++line_count > MAX_LINES_PER_PAGE)
     {
-        print_page_header;
+        //print_page_header(char source_name[], char date[]);
     }
     if (strlen(line) > MAX_PRINT_LINE_LENGTH) 
     {
-        printf ...| fold -w 80 // wrap to fit 80
+        /* printf ...| fold -w 80 */  
+        // I haven't tested it but I think this truncates (wraps) to fit 80 before printing w/o the use of a loop
+        /*int i = 0;
+	i = strlen(line);
+	for (int k = 0; k < i; k++)
+	{
+		printf("%c",get_char);
+		if((i+1)%10==0)
+	{
+	printf("\n");}
+	*/
     }
     if (save_chp)
     {
         /* Missing Code Here */
+        //return save_chp; 
     }
-    /* Missing Code Here */
-    if (save_chp)
-    {
-        /* Missing Code Here */
-    }
+    
+    // there was a second if contaioning cave_chp that I removed
+
 }
 static void print_page_header(char source_name[], char date[])
 {
