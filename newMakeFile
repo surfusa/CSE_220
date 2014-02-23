@@ -1,0 +1,6 @@
+# newton
+  
+  filename: filename.c
+ -	rm hello
+          gcc -g -Wall filename.c -o lister
+          ./filename
