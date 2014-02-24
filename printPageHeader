@@ -1,7 +1,4 @@
 #include<stdio.h>
-#inclued"common.h"
-#ifndef CSE220_project2_common_h
-#define CSE220_project2_common_h
 
 #include <stdio.h>
 #include <sys/types.h>
