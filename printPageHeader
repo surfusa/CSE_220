@@ -111,8 +111,8 @@ BOOLEAN getSourceLine(FILE *src_file, char *srcName, char *todaysDate)
 
 typedef enum {    FALSE, TRUE, }BOOLEAN;
 
-FILE *initLister(const char *, char *sourceFileName, char *date);
-BOOLEAN getSourceLine(FILE *, char *srcName, char *todaysDate);
-void printLine(char *, char *sourceName, char *dateToPrint);
+FILE *initLister(const char *fileName, char *sourceFileName, char *date);
+BOOLEAN getSourceLine(FILE *file, const char *srcName, const char *todaysDate);
+void printLine(char *line, char *sourceName, char *dateToPrint, int lineNumber);
 
 #endif
