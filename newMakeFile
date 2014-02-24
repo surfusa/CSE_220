@@ -1,6 +1,3 @@
-# newton
-  
-  filename: filename.c
- -	rm hello
-          gcc -g -Wall filename.c -o lister
-          ./filename
+printPageHeader: PrintPageHeader.c
+          gcc -g -Wall PrintPageHeader.c -o lister
+          ./lister
