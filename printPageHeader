@@ -1,3 +1,5 @@
+#include<stdio.h>
+
 ./._print.c
 ./a.out NEWTON.PAS /*loads NEWTON.PAS*/
 
@@ -5,7 +7,7 @@
 static void printPageHeader(const char *sourceName, const char *date);
 
 
-void printLine(char *line, char *sourceNameToPrint, char *dateToPrint, lineNumber)
+void printLine(char *line, char *sourceNameToPrint, char *dateToPrint, int lineNumber)
 {
     char saveCh;
     char *saveChp = NULL;
