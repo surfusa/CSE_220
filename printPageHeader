@@ -1,5 +1,6 @@
 #include<stdio.h>
 #inclued"common.h"
+#ifndef CSE220_project2_common_h
 #define CSE220_project2_common_h
 
 #include <stdio.h>
@@ -13,13 +14,21 @@
 #define MAX_PRINT_LINE_LENGTH   80
 #define MAX_LINES_PER_PAGE      50
 #define DATE_STRING_LENGTH      26
+
+typedef enum {    FALSE, TRUE, }BOOLEAN;
+
+FILE *init_lister(const char * file_name, char* source_file_name, char* date);
+BOOLEAN get_source_line(FILE* file, const char* src_name, const char* todays_date);
+void print_line(char* line, const char* source_name, const char* date_to_print, int line_number);
+
+
 ./._print.c
 ./a.out NEWTON.PAS /*loads NEWTON.PAS*/
 
 
 static void print_page_header(const char *source_name, const char *date);
 
-
+// Creates the source line (prints it)
 void print_line(char* line, const char* source_name_to_print, const char* date_to_print, int line_number)
 {
     char save_ch;
@@ -28,6 +37,7 @@ void print_line(char* line, const char* source_name_to_print, const char* date_t
     
     ++ line_count;
     
+    //new line
     if(line_count > MAX_LINES_PER_PAGE)
     {
         print_page_header(source_name_to_print, date_to_print);
@@ -47,6 +57,7 @@ void print_line(char* line, const char* source_name_to_print, const char* date_t
     printf("%s", line);
 }
 
+//Creates the page header (prints it)
 static void print_page_header(const char* source_name, const char* date)
 {
 	char path[128];
@@ -56,6 +67,7 @@ static void print_page_header(const char* source_name, const char* date)
     printf("\n\nPage %4d %s/%s  %s\n\n", page_number, path, source_name, date);
 }
 
+//Creates a Null page header just in case.
 int main()
 {
 	FILE* file = NULL;
@@ -72,6 +84,7 @@ int main()
 }
 
 
+//main page header
 int main(int argc, const char** argv)
 {
     FILE* source_file;
@@ -91,16 +104,17 @@ int main(int argc, const char** argv)
     return 0;
 }
 
+//opens and finds valuable info in the file
 FILE* init_lister(const char *name, char* source_file_name, char* date)
 {
 	time_t rawtime;
     struct tm* time_info;
     FILE* file;
 
-    // Copy the file name to the source_file_name buffer
+    // Copies file name to source_file_name buffer to be used
     strncpy(source_file_name, name, MAX_FILE_NAME_LENGTH);
 
-    // Generate the time string
+    // time string created
 	time(&rawtime);
     time_info = localtime(&rawtime);
     strftime(date, DATE_STRING_LENGTH, "%a %b %d %T %Y", time_info);
@@ -131,11 +145,5 @@ BOOLEAN get_source_line(FILE* src_file, const char* src_name, const char* todays
         return FALSE;
     }
 }
-
-typedef enum {    FALSE, TRUE, }BOOLEAN;
-
-FILE *init_lister(const char * file_name, char* source_file_name, char* date);
-BOOLEAN get_source_line(FILE* file, const char* src_name, const char* todays_date);
-void print_line(char* line, const char* source_name, const char* date_to_print, int line_number);
 
 #endif
