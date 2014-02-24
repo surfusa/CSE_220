@@ -142,5 +142,4 @@ BOOLEAN get_source_line(FILE* src_file, const char* src_name, const char* todays
         return FALSE;
     }
 }
-
 #endif
